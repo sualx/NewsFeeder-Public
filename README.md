@@ -1,12 +1,28 @@
 # NewsFeeder
 
-NewsFeeder is a Windows desktop application for reading selected news feeds and watching web pages for visible text changes. It is built with PowerShell 7 and Windows Forms and does not require an installer or external PowerShell modules.
+NewsFeeder is a Windows desktop application for reading selected news feeds and watching web pages for visible text changes. It is built with PowerShell 7 and Windows Forms.
 
 ## Windows only
 
 NewsFeeder depends on Windows Forms, Windows Script Host, the Windows registry, and Windows desktop APIs. It is not intended for macOS or Linux.
 
-Requirements:
+## Download
+
+### Easy Windows installation
+
+Choose **Install on Windows** if you just want to use NewsFeeder. It includes everything required, does not need administrator access, and adds NewsFeeder to the Start menu.
+
+[Install on Windows](https://github.com/sualx/NewsFeeder-Public/releases/latest/download/NewsFeeder-Setup.exe)
+
+Until the installer is code-signed, Windows may show an **Unknown publisher** or Microsoft Defender SmartScreen warning. Only download NewsFeeder from this repository.
+
+### Source version
+
+Choose **Download source version** if you prefer a small, inspectable copy and already have PowerShell 7.
+
+[Download source version](https://github.com/sualx/NewsFeeder-Public/releases/latest/download/NewsFeeder-Source.zip)
+
+Source-version requirements:
 
 - Windows
 - [PowerShell 7](https://learn.microsoft.com/powershell/scripting/install/installing-powershell-on-windows)
@@ -26,7 +42,7 @@ Requirements:
 - Tray operation, optional minimized startup, and optional launch at Windows sign-in
 - Local JSON state with feed-item deduplication
 
-## Run it
+## Run the source version
 
 1. Download or clone the repository into a normal writable folder.
 2. Confirm that PowerShell 7 is installed by opening **Start** and searching for **PowerShell 7**.
@@ -38,7 +54,7 @@ Requirements:
 
 ## Local data and privacy
 
-NewsFeeder creates a `data` folder beside the application files. It stores settings, downloaded history, seen-item identifiers, watched-page state, and error logs there. The folder is excluded from Git by `.gitignore`.
+The installed version stores settings, downloaded history, seen-item identifiers, watched-page state, and error logs in `%LOCALAPPDATA%\NewsFeeder`. Uninstalling the program leaves this user data in place. The source version creates a `data` folder beside the application files; that folder is excluded from Git by `.gitignore`.
 
 The application has no analytics or telemetry. Network requests go only to the configured feed URLs and user-added watched pages. Feed and page content is treated as untrusted input: XML DTD processing is prohibited, displayed content is converted to plain text, and only HTTP or HTTPS links are opened.
 
@@ -50,7 +66,7 @@ The application has no analytics or telemetry. Network requests go only to the c
 - A web publisher may temporarily reject requests or change or remove its feed. NewsFeeder reports source failures and retries on a later check.
 - Page-change detection compares normalized visible text. Dynamic page text can therefore produce frequent changes.
 
-## Files in the public release
+## Files in the source version
 
 - `NewsFeeder.ps1` - application
 - `NewsFeeder.vbs` - preferred silent launcher
@@ -58,6 +74,10 @@ The application has no analytics or telemetry. Network requests go only to the c
 - `feeds.json` - built-in feed catalog
 - `.gitignore` - excludes local application data
 - `README.md` and `LICENSE` - documentation and license
+
+## Build the release files
+
+Maintainers need PowerShell 7 and Inno Setup 6. Run `./installer/Build-Release.ps1` to create `NewsFeeder-Setup.exe` and `NewsFeeder-Source.zip` under `artifacts`. The build downloads the pinned Microsoft PowerShell runtime and verifies its published SHA-256 hash before packaging it.
 
 ## License
 

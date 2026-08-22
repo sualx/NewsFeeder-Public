@@ -3,13 +3,16 @@
 # no active content), polite fetching (honest UA, conditional requests, interval floors),
 # no silent failures, cannot destroy user data (writes only its own state files, atomically).
 
-param([switch]$SelfTest)
+param(
+    [switch]$SelfTest,
+    [switch]$Installed
+)
 
 $ErrorActionPreference = 'Stop'
 
 $script:AppName   = 'NewsFeeder'
 $script:BaseDir   = $PSScriptRoot
-$script:DataDir   = Join-Path $PSScriptRoot 'data'
+$script:DataDir   = if ($Installed) { Join-Path $env:LOCALAPPDATA $script:AppName } else { Join-Path $PSScriptRoot 'data' }
 $script:UserAgent = 'NewsFeeder/1.0 (personal Windows desktop news reader)'
 $script:MinFeedIntervalMin = 15   # polite floor for news feeds
 $script:MinUrlIntervalMin  = 5    # polite floor for watched URLs
