@@ -1,0 +1,145 @@
+{
+  "comment": "Feed catalog for NewsFeeder. Each feed belongs to the security, goodnews, or science group.",
+  "feeds": [
+    {
+      "id": "bleepingcomputer",
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/feed/",
+      "group": "security",
+      "categories": true
+    },
+    {
+      "id": "thehackernews",
+      "name": "The Hacker News",
+      "url": "https://feeds.feedburner.com/TheHackersNews",
+      "group": "security",
+      "categories": false
+    },
+    {
+      "id": "krebs",
+      "name": "Krebs on Security",
+      "url": "https://krebsonsecurity.com/feed/",
+      "group": "security",
+      "categories": true
+    },
+    {
+      "id": "ars-security",
+      "name": "Ars Technica Security",
+      "url": "https://arstechnica.com/security/feed/",
+      "group": "security",
+      "categories": true
+    },
+    {
+      "id": "darkreading",
+      "name": "Dark Reading",
+      "url": "https://www.darkreading.com/rss.xml",
+      "group": "security",
+      "categories": false
+    },
+    {
+      "id": "securityweek",
+      "name": "SecurityWeek",
+      "url": "https://www.securityweek.com/feed/",
+      "group": "security",
+      "categories": true
+    },
+    {
+      "id": "sans-isc",
+      "name": "SANS Internet Storm Center",
+      "url": "https://isc.sans.edu/rssfeed.xml",
+      "group": "security",
+      "categories": false
+    },
+    {
+      "id": "schneier",
+      "name": "Schneier on Security",
+      "url": "https://www.schneier.com/feed/atom/",
+      "group": "security",
+      "categories": true
+    },
+    {
+      "id": "cisa",
+      "name": "CISA Cybersecurity Advisories",
+      "url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "group": "security",
+      "categories": false
+    },
+    {
+      "id": "theregister",
+      "name": "The Register Security",
+      "url": "https://www.theregister.com/security/headlines.atom",
+      "group": "security",
+      "categories": true
+    },
+    {
+      "id": "techcrunch-sec",
+      "name": "TechCrunch Security",
+      "url": "https://techcrunch.com/category/security/feed/",
+      "group": "security",
+      "categories": true
+    },
+    {
+      "id": "zdnet-sec",
+      "name": "ZDNET Security",
+      "url": "https://www.zdnet.com/topic/security/rss.xml",
+      "group": "security",
+      "categories": false
+    },
+    {
+      "id": "goodnewsnetwork",
+      "name": "Good News Network",
+      "url": "https://www.goodnewsnetwork.org/feed/",
+      "group": "goodnews",
+      "categories": true
+    },
+    {
+      "id": "positivenews",
+      "name": "Positive News",
+      "url": "https://www.positive.news/feed/",
+      "group": "goodnews",
+      "categories": true
+    },
+    {
+      "id": "cheerful",
+      "name": "Reasons to be Cheerful",
+      "url": "https://reasonstobecheerful.world/feed/",
+      "group": "goodnews",
+      "categories": true
+    },
+    {
+      "id": "uplifting",
+      "name": "r/UpliftingNews",
+      "url": "https://www.reddit.com/r/UpliftingNews/.rss",
+      "group": "goodnews",
+      "categories": false
+    },
+    {
+      "id": "bbc-science",
+      "name": "BBC Science & Environment",
+      "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+      "group": "science",
+      "categories": false
+    },
+    {
+      "id": "ars-science",
+      "name": "Ars Technica Science",
+      "url": "https://arstechnica.com/science/feed/",
+      "group": "science",
+      "categories": true
+    },
+    {
+      "id": "sciencedaily",
+      "name": "ScienceDaily",
+      "url": "https://www.sciencedaily.com/rss/all.xml",
+      "group": "science",
+      "categories": false
+    },
+    {
+      "id": "phys",
+      "name": "Phys.org",
+      "url": "https://phys.org/rss-feed/",
+      "group": "science",
+      "categories": false
+    }
+  ]
+}
