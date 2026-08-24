@@ -471,6 +471,7 @@ function Show-Popup([string]$Caption, [string]$Body, [string]$Link) {
     $lblCap = New-Object System.Windows.Forms.Label
     $lblCap.Text = $Caption; $lblCap.ForeColor = [System.Drawing.Color]::FromArgb(120, 190, 255)
     $lblCap.Font = $capFont
+    $lblCap.UseCompatibleTextRendering = $false
     $lblCap.AutoEllipsis = $true; $lblCap.AutoSize = $false
     $capH = [System.Windows.Forms.TextRenderer]::MeasureText('Ag', $capFont).Height + 2
     $lblCap.Location = New-Object System.Drawing.Point($m, $m)
@@ -479,6 +480,7 @@ function Show-Popup([string]$Caption, [string]$Body, [string]$Link) {
 
     $lblBody = New-Object System.Windows.Forms.Label
     $lblBody.Text = $Body; $lblBody.ForeColor = [System.Drawing.Color]::White
+    $lblBody.UseCompatibleTextRendering = $false
     $lblBody.AutoEllipsis = $true; $lblBody.AutoSize = $false
     $lblBody.Location = New-Object System.Drawing.Point($m, ($lblCap.Bottom + [int]($m / 2)))
     $lblBody.Size = New-Object System.Drawing.Size(($wide - 2 * $m), (3 * $line))
@@ -495,6 +497,7 @@ function Show-Popup([string]$Caption, [string]$Body, [string]$Link) {
 
     $btnX = New-Object System.Windows.Forms.Label
     $btnX.Text = [char]0x2715; $btnX.ForeColor = [System.Drawing.Color]::Gray
+    $btnX.UseCompatibleTextRendering = $false
     $btnX.AutoSize = $false; $btnX.TextAlign = 'MiddleCenter'
     $btnX.Size = New-Object System.Drawing.Size($line, $line)
     $btnX.Location = New-Object System.Drawing.Point(($wide - $line - [int]($m / 2)), [int]($m / 2))
@@ -532,6 +535,7 @@ function Show-Popup([string]$Caption, [string]$Body, [string]$Link) {
     $t = New-Object System.Windows.Forms.Timer
     $t.Interval = 240000   # 240 seconds (4 minutes)
     $t.Add_Tick({ $t.Stop(); $t.Dispose(); if (-not $f.IsDisposed) { $f.Close() } }.GetNewClosure())
+    $f.Add_FormClosed({ $t.Stop(); $t.Dispose() }.GetNewClosure())
     $t.Start()
 }
 
