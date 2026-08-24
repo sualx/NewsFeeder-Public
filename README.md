@@ -8,19 +8,9 @@ NewsFeeder depends on Windows Forms, Windows Script Host, the Windows registry, 
 
 ## Download
 
-### Easy Windows installation
+NewsFeeder is currently distributed as a source version for people who already have PowerShell 7. The download always contains the latest version from the public `main` branch.
 
-Choose **Install on Windows** if you just want to use NewsFeeder. It includes everything required, does not need administrator access, and adds NewsFeeder to the Start menu.
-
-[Install on Windows](https://github.com/sualx/NewsFeeder-Public/releases/latest/download/NewsFeeder-Setup.exe)
-
-Until the installer is code-signed, Windows may show an **Unknown publisher** or Microsoft Defender SmartScreen warning. Only download NewsFeeder from this repository.
-
-### Source version
-
-Choose **Download source version** if you prefer a small, inspectable copy and already have PowerShell 7.
-
-[Download source version](https://github.com/sualx/NewsFeeder-Public/releases/latest/download/NewsFeeder-Source.zip)
+[Download NewsFeeder](https://github.com/sualx/NewsFeeder-Public/archive/refs/heads/main.zip)
 
 Source-version requirements:
 
